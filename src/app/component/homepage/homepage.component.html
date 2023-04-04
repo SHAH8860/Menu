@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div
+        class="collapse navbar-collapse justify-content-center"
+        id="navbarCenteredExample"
+      >
+        <ul class="navbar-nav mb-2 mb-lg-0"> 
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" (click)="Search('all')">All</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link active" aria-current="page" (click)="Search('BreakFast')" >BreakFast</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" (click)="Search('Lunch')">Lunch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" (click)="Search('Dinner')">Dinner</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div
+        class="card col-sm-3 m-2"
+        style="width: 18rem"
+        *ngFor="let a of data; index as i"
+        
+      >
+        <h5 class="card-title">
+          {{ a.category }} <span>{{ i }}</span>
+        </h5>
+        <img src="{{ a.image }}" class="card-img-top" alt="Loading..." />
+        <div class="card-body">
+          <p class="card-text" >{{ a.description }}</p>
+          <a class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
